@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg0: 255 255 255;
+    --bg1: 245 247 255;
+    --card: 255 255 255;
+    --txt: 12 14 20;
+    --muted: 85 92 110;
+    --border: 220 226 242;
+    --brand: 119 71 255;
+    --good: 22 163 74;
+    --warn: 245 158 11;
+    --bad: 239 68 68;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow2: 0 25px 60px rgba(0, 0, 0, 0.18);
+  }
+
+  .dark {
+    --bg0: 7 10 18;
+    --bg1: 10 14 27;
+    --card: 10 14 27;
+    --txt: 236 240 255;
+    --muted: 155 163 185;
+    --border: 40 48 72;
+    --brand: 173 129 255;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --shadow2: 0 25px 60px rgba(0, 0, 0, 0.55);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply antialiased;
+    color: rgb(var(--txt));
+    background:
+      radial-gradient(1200px 700px at 20% 10%, rgba(173, 129, 255, 0.22), transparent 60%),
+      radial-gradient(900px 600px at 85% 15%, rgba(255, 212, 120, 0.18), transparent 55%),
+      radial-gradient(1000px 700px at 65% 80%, rgba(56, 189, 248, 0.14), transparent 55%),
+      linear-gradient(180deg, rgb(var(--bg0)) 0%, rgb(var(--bg1)) 100%);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/15 bg-white/55 backdrop-blur-xl dark:border-white/10 dark:bg-white/10;
+    box-shadow: var(--shadow);
+  }
+  .glass-strong {
+    @apply border border-white/20 bg-white/70 backdrop-blur-2xl dark:border-white/10 dark:bg-white/10;
+    box-shadow: var(--shadow2);
+  }
+
+  .premium-title {
+    background-image: linear-gradient(90deg, #d6b35f 0%, #fff0c2 35%, #ffffff 70%, #d4d4d8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow:
+      0 1px 0 rgba(0, 0, 0, 0.18),
+      0 10px 35px rgba(255, 215, 130, 0.18);
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+}
