@@ -1,5 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8787/api'
-const makeIdempotencyKey = () =>
+const API_BASE = 'https://wcbeqxnufyxcqismgvyc.supabase.co/rest/v1'
+  const makeIdempotencyKey = () =>
   `${Date.now()}-${Math.random().toString(36).slice(2, 10)}-${Math.random().toString(36).slice(2, 10)}`
 
 export async function apiFetch(path, options = {}, token) {
