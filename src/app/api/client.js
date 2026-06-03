@@ -1,4 +1,3 @@
-// SAFE PRODUCTION BYPASS CODE
 const API_BASE = 'https://wcbeqxnufyxcqismgvyc.supabase.co/rest/v1'
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
 
